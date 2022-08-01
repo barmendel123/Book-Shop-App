@@ -1,0 +1,212 @@
+
+
+  td,
+th {
+  border: 2px solid rgb(32, 11, 11);
+  padding: 3px 10px;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+.books-table {
+    border-collapse: collapse;
+    border: 2px solid rgb(192, 72, 72);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: .5rem;
+    margin: 1.5rem auto;
+  }
+  h1 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2rem;
+  }
+
+  body {
+    background-color: rgb(253, 239, 239);
+  }
+
+  button {
+    margin: 3px;
+    border-radius: 5px;
+    width: 80px;
+    background-color: blanchedalmond;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: rgb(240, 186, 186);
+}
+
+.user-msg {
+    position: fixed;
+    bottom: -100px;
+    right:10px;
+    background-color: rgb(241, 225, 2);
+    padding: 10px;
+    border-radius: 10px;
+}
+.user-msg.open {
+    bottom: 10px;
+    transition: bottom .5s;
+}
+
+.modal {
+    display: none;
+    background-color: rgb(230, 231, 162);
+    padding: 10px;
+    position: absolute;
+    top: 0px;
+    /* left: 150%; */
+    height: 150vh;
+    min-width: 300px;
+    text-align: center;
+}
+.modal.open {
+    display: block;
+}
+.modal h3{
+    color: rgb(163, 23, 58);
+    text-transform: capitalize;
+    font-size: 2.3rem;
+}
+.modal h4 span{
+    color:rgb(6, 4, 8);
+}
+.modal > p {
+    text-align: left;
+}
+
+.modal h5 {
+    font-size: 1.2rem;
+}
+
+.modal button {
+    float: left;
+    border-radius: 5px;
+    font-weight: bold;
+    height: 2rem;
+    width: 4rem;
+    background-color: rgb(187, 97, 214);
+    
+}
+
+.modal button:hover {
+    background-color: rgb(220, 248, 183);
+}
+.book-img {
+    height: 200px;
+    width: 200px;
+    /* margin: auto; */
+}
+
+.rate-book {
+    display: flex;
+    flex-direction: row;
+    float: left;
+}
+
+.quantity-field {
+    height: 25px;
+    width: 40px;
+    text-align:right;
+}
+
+.add-book-btn {
+    font-weight: bold;
+    font-style: italic;
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: rgba(194, 253, 234, 0.993);
+}
+
+.filter-price-select {
+  padding-left: 30px;
+  background-color: rgb(255, 249, 218);
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.name-filter {
+  width: 160px;
+}
+
+.page-btn button{
+    font-weight: bold;
+    font-style: italic;
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: rgba(238, 128, 78, 0.932);
+}
+
+.next-page:disabled {
+  background-color: antiquewhite;
+}
+
+.prev-page:disabled {
+  background-color: antiquewhite;
+
+}
+
+.rating {
+    --dir: right;
+    --fill: gold;
+    --fillbg: rgba(100, 100, 100, 0.15);
+    background-color: rgb(253, 239, 239);
+    --heart: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.328l-1.453-1.313q-2.484-2.25-3.609-3.328t-2.508-2.672-1.898-2.883-0.516-2.648q0-2.297 1.57-3.891t3.914-1.594q2.719 0 4.5 2.109 1.781-2.109 4.5-2.109 2.344 0 3.914 1.594t1.57 3.891q0 1.828-1.219 3.797t-2.648 3.422-4.664 4.359z"/></svg>');
+    --star: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.25l-6.188 3.75 1.641-7.031-5.438-4.734 7.172-0.609 2.813-6.609 2.813 6.609 7.172 0.609-5.438 4.734 1.641 7.031z"/></svg>');
+    --stars: 5;
+    --starsize: 1.2rem;
+    --symbol: var(--star);
+    --value: 1;
+    --w: calc(var(--stars) * var(--starsize));
+    --x: calc(100% * (var(--value) / var(--stars)));
+    block-size: var(--starsize);
+    inline-size: var(--w);
+    position: relative;
+    touch-action: manipulation;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  
+  [dir="rtl"] .rating {
+    --dir: left;
+  }
+  
+  .rating::-moz-range-track {
+    background: linear-gradient(to var(--dir), var(--fill) 0 var(--x), var(--fillbg) 0 var(--x));
+    block-size: 100%;
+    mask: repeat left center/var(--starsize) var(--symbol);
+  }
+  
+  .rating::-webkit-slider-runnable-track {
+    background: linear-gradient(to var(--dir), var(--fill) 0 var(--x), var(--fillbg) 0 var(--x));
+    block-size: 100%;
+    mask: repeat left center/var(--starsize) var(--symbol);
+    -webkit-mask: repeat left center/var(--starsize) var(--symbol);
+  }
+  
+  .rating::-moz-range-thumb {
+    height: var(--starsize);
+    opacity: 0;
+    width: var(--starsize);
+  }
+  
+  .rating::-webkit-slider-thumb {
+    height: var(--starsize);
+    opacity: 0;
+    width: var(--starsize);
+    -webkit-appearance: none;
+  }
+  
+  .rating,
+  .rating-label {
+    display: block;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  .rating-label {
+    margin-block-end: 1rem;
+  }
+  

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Book-Shop</title>
+</head>
+<body onload="onInit()">
+    <h1 class="top-title">Welcome to my bookshop</h1>
+    <hr />
+
+    <div class="filter-price-select"> 
+        <h2>Filters:</h2>
+            <label>
+              Max Price:
+             <input type="range"
+                    min="0"
+                    max="200"
+                    value="200" 
+                    class="filter-price-range"
+                    onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})" />
+            </label>    
+
+            <label>
+            Min Rate:
+                <input type="range" 
+                    min="0"
+                    max="5" 
+                    value="0" 
+                    class="filter-rate-range"
+                    onchange="this.title=this.value;onSetFilterBy({minRate: this.value})" />
+            </label>
+            
+        <br> By name: 
+            <input  
+                type="text" 
+                class="name-filter" 
+                onkeyup="onSetFilterBy({title: this.value})"  
+                placeholder="Serach a book">
+    </div> 
+    <hr />
+    <button class="add-book-btn" onclick="onAddBook()" >Add Book</button>
+    <table class="table-books"></table>
+
+    <div class="page-btn">  
+        <button class="prev-page-btn prev-page "  onclick="onPrevPage()">Prev Page</button>
+        <button class="next-page-btn next-page"  onclick="onNextPage()">Next Page</button>
+    </div>   
+    
+    <div class="modal">
+        <button onclick="onCloseModal()">Close</button>
+        
+        <img class="book-img" alt="">
+        <h5> Rate's Book:  <span></span> </h5>
+        <h4> Price: <span></span> </h4>
+        <h3></h3>
+        <p></p>
+        
+    </div>
+    <div class="user-msg"></div>
+
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+
+</body>
+</html>
